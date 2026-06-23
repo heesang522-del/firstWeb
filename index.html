@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나만의 요리비책</title>
+    <link rel="stylesheet" href="./styles/tteokbokki-style.css">
+    <script src="https://kit.fontawesome.com/3d72eac2d2.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <a href="" class="logo">나만의 <span>요리비책</span></a>
+
+            <div class="search">
+                <input type="text" placeholder="요리를 입력하세요.">
+                <button type="button">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+
+            <div class="header-util">
+                <button type="button" class="add-recipe">
+                    <i class="fa-solid fa-pencil"></i>
+                </button>
+            </div>
+        </header>
+
+        <nav class="nav">
+            <ul class="menu-list">
+                <li><a href="#">추천</a></li>
+                <li><a href="#">분류</a></li>
+                <li class="has-submenu">
+                    <a href="#">마이페이지</a>
+                    <ul class="submenu">
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">회원가입</a></li>
+                        <li><a href="#">아이디/비밀번호찾기</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- [3] 메인: 실제 핵심 레시피 내용 -->
+        <main class="main">
+            <div class="recipe-hero">
+                <img src="https://i.namu.wiki/i/cZIpD7HblLI2gdMZEDt9ojJcHTnKhxv6pKzPgNS-ehl0-lmQsRj4XzOLutV1LoZoS6VNBrRST6PVZowoWC8czVcZbfhAEvIkhXz4mnHPyGsXU0E9-prmM19b_XX3MNt1YaPkJM3cP7IX7ko_cQHHdA.webp"
+                    alt="레시피 대표 이미지" class="main-img">
+            </div>
+            <h1 class="h1">떡볶이 레시피</h1>
+            <section class="ingredients-section">
+                <h3>재료</h3>
+                <ul class="ingredient-list">
+                    <li>
+                        <label>
+                            <input type="checkbox"> <span>떡 400g</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox"> <span>어묵 5장</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox"> <span>대파 1대</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox"> <span>물 1L</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox"> <span>고춧가루 2큰술</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox"> <span>설탕 4큰술</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox"> <span>간장 1큰술</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox"> <span>고추장 2큰술</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox"> <span>미원 1/2큰술</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="checkbox"> <span>다시다 1/2큰술 </span>
+                        </label>
+                    </li>
+                </ul>
+            </section>
+
+
+            <section class="recipe-steps">
+                <h3>조리 순서</h3>
+                <ol class="step-list">
+                    <li>
+                        <span class="step-number">1</span>
+                        <p>냄비에 물 1리터와 떡, 어묵을 넣는다.</p>
+                    </li>
+                    <li>
+                        <span class="step-number">2</span>
+                        <p>고춧가루, 설탕, 간장, 고추장을 분량대로 넣어 양념하고 끓여준다.</p>
+                    </li>
+                    <li>
+                        <span class="step-number">3</span>
+                        <p>미원과 다시다를 넣어준다.</p>
+                    </li>
+                    <li>
+                        <span class="step-number">4</span>
+                        <p>떡이 적당히 익으면 전분물을 준비해서 보글보글 끓을 때 넣어준다.</p>
+                    </li>
+                    <li>
+                        <span class="step-number">5</span>
+                        <p>마지막으로 대파를 넣어 살짝 익을 때까지 끓여준다.</p>
+                    </li>
+                    <li>
+                        <span class="step-number">6</span>
+                        <p>그릇에 담아 떡볶이를 맛있게 먹으면 끝!!!</p>
+                    </li>
+                </ol>
+            </section>
+            <aside>
+                <!-- 팁/주의사항 -->
+            </aside>
+        </main>
+        <!-- [5] 푸터: 맨 아래 출처 정보 -->
+        <footer class="footer">
+            <a href="https://youtu.be/3SlGinJp_Kc?si=2-IHhwWloVSTWZYi" target="_blank">출처 : 정호영의 오늘도 요리</a> <br>
+            <a href="https://www.10000recipe.com/" target="_blank">참고 : 만개의 레시피</a>
+            <p>아쉬운 점 : nav클래스의 마이페이지 뒤로 창이 나오게끔 z-index를 사용해봤지만, 실패했다.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
