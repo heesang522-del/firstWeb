@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>나만의 아지트</title>
     <link rel="stylesheet" href="style.css">
+
+    <script src="main.js" async></script>
 </head>
 <body>
 
@@ -13,7 +15,7 @@
         <main class="calendar-section">
             <div class="calendar-header">
                 <button id="prev-month">&lt;</button>
-                <h2 id="current-month-year">2026년 7월</h2>
+                <h2 id="current-month-year">현재 년 월</h2> 
                 <button id="next-month">&gt;</button>
             </div>
             
@@ -28,22 +30,14 @@
                 <div class="day-label">금</div>
                 <div class="day-label">토</div>
                 
-                <!-- 날짜들이 자바스크립트로 채워질 공간입니다. (임시 데이터 배치) -->
-                <div class="calendar-day empty"></div>
-                <div class="calendar-day empty"></div>
-                <div class="calendar-day empty"></div>
-                <div class="calendar-day empty"></div>
-                <div class="calendar-day">1</div>
-                <div class="calendar-day">2</div>
-                <div class="calendar-day active">3</div> <!-- 선택된 날짜 예시 -->
-                <!-- ... 생략 ... -->
+                <!-- 날짜들이 자바스크립트로 채워질 공간입니다.-->
             </div>
         </main>
 
         <!-- 오른쪽 세션: 날짜별 기록창 (일기장, 가계부, 할 일) -->
         <aside class="record-section">
             <div class="record-header">
-                <h3>2026년 7월 3일의 기록</h3>
+                <h3>현재 날짜의 기록</h3>
             </div>
             
             <!-- 기능별 탭 메뉴 -->
@@ -83,8 +77,5 @@
         </div>
         <textarea placeholder="캘린더와 별개로 자유롭게 낙서하는 공간입니다..."></textarea>
     </div>
-
-    <!-- 자바스크립트 파일 연결 (나중에 작성) -->
-    <script src="script.js"></script>
 </body>
 </html>
