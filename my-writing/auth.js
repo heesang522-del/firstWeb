@@ -27,7 +27,7 @@ tabRegister.addEventListener('click', () => {
 registerForm.addEventListener('submit', (e) => {
     e.preventDefault(); // 폼 제출 시 페이지가 새로고침되는 것을 막음
 
-    const regId = document.getElementById('reg-id').value.trim();
+    const regId = document.getElementById('reg-id').value;
     const regPw = document.getElementById('reg-pw').value;
     const regPwConfirm = document.getElementById('reg-pw-confirm').value;
 
@@ -54,7 +54,7 @@ registerForm.addEventListener('submit', (e) => {
     // 가입 정보 객체 생성 (실제 서비스에서는 서버에서 암호화되지만, 프론트 단 구조 설계)
     const userData = {
         id: regId,
-        password: btoa(regPw) // btoa(): 간단한 인코딩 (보안 맛보기용, 추후 해시 암호화로 대체)
+        password: regPw
     };
 
     // 로컬 스토리지에 유저 정보 저장 (key: user_아이디)
@@ -73,7 +73,7 @@ registerForm.addEventListener('submit', (e) => {
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const loginId = document.getElementById('login-id').value.trim();
+    const loginId = document.getElementById('login-id').value;
     const loginPw = document.getElementById('login-pw').value;
 
     // 로컬 스토리지에서 해당 아이디의 유저 정보 가져오기
@@ -87,7 +87,7 @@ loginForm.addEventListener('submit', (e) => {
     const user = JSON.parse(storedUserData);
 
     // 비밀번호 검증 (저장된 인코딩 값과 비교)
-    if (user.password === btoa(loginPw)) {
+    if (user.password === loginPw) {
         alert('🔓 인증에 성공했습니다. 메인 화면으로 이동합니다.');
         
         // 보안 로그인 상태 유지 (세션 스토리지에 '지금 로그인 됨' 표시 남기기)

@@ -105,8 +105,11 @@ function updateRecordSection() {
     const isToday = selectedDate.toDateString() === today.toDateString();
     const isYesterday = selectedDate.toDateString() === yesterday.toDateString();
 
-    // 로컬 스토리지 키 생성 (예: "diary_2026-7-6")
-    const dateKey = `diary_${year}-${month}-${day}`;
+    // 세션 스토리지에서 현재 로그인한 사람의 아이디를 가져옵니다.
+    const currentUser = sessionStorage.getItem('currentUser') || 'guest';
+    
+    // 로컬 스토리지 키 생성 (예: "user01_diary_2026-7-6")
+    const dateKey = `${currentUser}_diary_${year}-${month}-${day}`;
     const savedDiary = localStorage.getItem(dateKey);
 
     if (isToday || isYesterday) {
@@ -141,11 +144,12 @@ diarySaveBtn.addEventListener('click', () => {
     const year = selectedDate.getFullYear();
     const month = selectedDate.getMonth() + 1;
     const day = selectedDate.getDate();
-    
-    const dateKey = `diary_${year}-${month}-${day}`;
-    const diaryContent = diaryTextarea.value; // trim()을 없애서 줄바꿈이나 공백도 자연스럽게 저장되도록 합니다.
 
-    if (diaryContent.trim() === "") {
+    const currentUser = sessionStorage.getItem('currentUser')
+    const dateKey = `${currentUser}_diary_${year}-${month}-${day}`;
+    const diaryContent = diaryTextarea.value;
+
+    if (diaryContent === "") {
         // 만약 내용을 다 지우고 저장을 누르면, 저장소에서도 삭제해 줍니다 (초기화)
         localStorage.removeItem(dateKey);
         alert(`📝 ${year}년 ${month}월 ${day}일 내용이 비워졌습니다.`);
