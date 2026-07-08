@@ -85,6 +85,24 @@ body {
     font-weight: 500;
 }
 
+/* ⭐ [신규] 일기가 작성된 날짜 스타일 */
+.calendar-day.has-diary {
+    position: relative;
+    font-weight: bold;
+    color: var(--accent-color); /* 글자 색상을 포인트 컬러로 변경 */
+}
+
+/* 숫자 아래에 작은 점(Dot) 찍기 */
+.calendar-day.has-diary::after {
+    content: '';
+    position: absolute;
+    top: 50%; /* 가로줄이 글자 정중앙 높이에 오도록 설정 */
+    left: 5%;
+    right: 5%;
+    height: 4px;
+    background-color: var(--accent-color); /* 초록색 점 */
+}
+
 .calendar-day:hover:not(.empty) {
     background: var(--border-color);
 }

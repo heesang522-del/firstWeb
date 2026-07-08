@@ -71,6 +71,13 @@ function renderCalendar() {
         const dayDiv = document.createElement('div');
         dayDiv.classList.add('calendar-day');
         dayDiv.textContent = day;
+// ///////////////////////////////////
+        const currentUser = sessionStorage.getItem('currentUser')
+        const checkKey = `${currentUser}_diary_${year}-${month + 1}-${day}`;
+        
+        if (localStorage.getItem(checkKey)) {
+            dayDiv.classList.add('has-diary'); // 일기가 있다면 클래스 부여!
+        }
 
         // 만약 선택된 날짜라면 시각적으로 표시 (active 클래스)
         if (year === selectedDate.getFullYear() && month === selectedDate.getMonth() && day === selectedDate.getDate()) {
@@ -161,6 +168,7 @@ diarySaveBtn.addEventListener('click', () => {
 
     // ⭐ 저장한 직후에 화면을 새로고침하는 대신, 방금 쓴 글 상태를 그대로 유지하기 위해 함수 호출
     updateRecordSection();
+    renderCalendar(); // ⭐ [추가] 저장하거나 지웠을 때 달력의 점을 실시간으로 업데이트!
 });
 
 // ==========================================
